@@ -1,0 +1,16 @@
+{
+  "appId": "ru.poradom.app",
+  "appName": "Пора: Дом",
+  "webDir": "www",
+  "backgroundColor": "#123f3a",
+  "plugins": {
+    "SystemBars": {
+      "style": "DARK",
+      "insetsHandling": "css",
+      "initialViewportFitValueHint": "cover"
+    }
+  },
+  "android": {
+    "allowMixedContent": false
+  }
+}

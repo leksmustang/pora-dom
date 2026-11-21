@@ -1,0 +1,23 @@
+{
+  "name": "pora-dom",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Installable offline-first trial release of the Pora: Dom household care app.",
+  "scripts": {
+    "start": "node backend/server.mjs",
+    "test": "node tests/e2e.cjs && node backend/api.test.mjs && node tests/release-web.cjs && node tests/android-notification-routing.cjs && node tests/ad-mediation.cjs",
+    "build:web": "node scripts/build-web.mjs",
+    "android:sync": "pnpm run build:web && node -r ./scripts/node-userinfo-workaround.cjs ./node_modules/@capacitor/cli/bin/capacitor sync android",
+    "android:debug": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-debug.ps1",
+    "android:test-release": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-test-release.ps1",
+    "android:release": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-release.ps1"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/core": "^8.5.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.3"
+  },
+  "packageManager": "pnpm@11.25.0"
+}
